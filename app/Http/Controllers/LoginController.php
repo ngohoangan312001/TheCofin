@@ -15,10 +15,10 @@ class LoginController extends Controller
     }
 
     public function loginUser(Request $request){
-       $data = $request->only('username', 'password');
+       $data = $request->only('email', 'password');
 
         if(Auth::attempt($data)){
-            $user = User::where('username', $request->username)->first();
+            $user = User::where('email', $request->email)->first();
             $idUser = $user->cust_id;
             Session::put('logined', $idUser);
             return redirect()->route('trangchuUser')->with(['login_success1'=>'Đăng nhập thành công']);
@@ -26,7 +26,7 @@ class LoginController extends Controller
             return back()->with(['login_fail1' => 'Thông tin đăng nhập không chính xác!!!']);
         }
     }
-
+ 
     public function login(Request $request){
         $this->validate($request,
         [

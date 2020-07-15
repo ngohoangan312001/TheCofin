@@ -153,7 +153,7 @@ body{
         <br>
         <br>
 
-        
+        <div>
             <div class="container" style="  background-color: rgba(105, 105, 105, 0.158);padding-bottom: 30px;">
               <h5 style="text-align: center;" ><span style="background: center black;color:white;padding: 10px;">ABOUT THE COFIN</span></h5>
               <br>
@@ -164,7 +164,7 @@ body{
                 <p>Chef, Coffeeist and Owner: Liam Brown</p>
               </div>
               <img src="https://content.r9cdn.net/rimg/himg/7b/f2/e9/sembo-IE-H86690-128597b1_z.jpg_resizeMode=FitInside_formatSettings=jpeg(quality-90)-672819.jpg?width=1200&height=630&crop=false" style="width:100%">
-              
+            </div>
           </div><br>
           <hr style="width: 60% ;">
           <div class="container-fluid">

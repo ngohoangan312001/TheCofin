@@ -4,10 +4,8 @@
 @endsection
 
 @section('content')
-<br>
-<br>
-<br>
-<section class="container p-0">
+
+<section class="container p-0 py-5">
         <div class="container-fluid p-0 text-center">
             @if (session()->has('delete_success'))
                 <div class="alert alert-info mb-0 text-uppercase">{{session()->get('delete_success')}}</div>
@@ -27,7 +25,7 @@
                 <th scope="col">Giá bán (VNĐ/1)</th>
                 <th scope="col" colspan="3"><center>Số lượng</center> </th>
                 <th scope="col">Thành tiền</th>
-                <th></th>
+                <th scope="col">Thao tác</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,18 +34,18 @@
                 <td class="text-center"><img style="width: 150px;" src="{{ url('images/'.$item->options->image)}}" alt=""></td>
                     <td>{{$item->name}}</td>
                     <td class="text-price"><strong>{{number_format($item->price) }} đ</strong></td>
-                    <td>
-                        <form action="{{route('giamsoluong')}}" method="POST">
+                    
+
+                    <td class="text-price"><input class="input-qty sl text-center"readonly  type="text" value="{{$item->qty}}" min="1" max="100" name="qty1"></td>
+                    <td style="width: 20px">
+                        <form class="" action="{{route('giamsoluong')}}" method="POST">
                             {{ csrf_field() }}
                             <button type="submit" class="btn-number" data-type="minus" data-field="qty1" name="qtyminus">-</button>
                             <input type="hidden" name="qty" value="{{$item->qty}}">
                             <input type="hidden" name="id" value="{{$item->rowId}}">
                         </form>
                     </td>
-
-                    <td class="text-price"><input class="input-qty ml-2 text-center"readonly type="text" value="{{$item->qty}}" min="1" max="100" name="qty1"></td>
-
-                    <td>
+                    <td >
                         <form action="{{route('tangsoluong')}}" method="POST">
                                 {{ csrf_field() }}
                                 <button type="submit" class="ml-2 btn-number" data-type="minus" data-field="qty1" name="qtyplus">+</button>

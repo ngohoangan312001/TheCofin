@@ -38,7 +38,13 @@ body, html {
 .spprice{
     font-weight: 10px;
 }
-
+button{
+    background-color: white;
+    color: orange;
+    border: solid 2px orange;
+    border-radius: 5px;
+    transition: 0.4s;
+}
 .dtlbtn:hover{
     background-color: orange;
     color: white;
@@ -201,7 +207,7 @@ span.psw a{
         <a class="nav-link" href="{{route('danhSachSanPham')}}">MENU</a>
       </div>
       <div  class="nav-item">
-        <a class="nav-link"  href="">NEWS</a>
+        <a class="nav-link"  href="tintuc">NEWS</a>
       </div>
       <div  class="nav-item">
         <a class="nav-link" href="cuahang">FEEDBACK</a>
@@ -230,41 +236,22 @@ span.psw a{
       <button class="btn btn-success" onclick="document.getElementById('id01').style.display='block'" >Đăng nhập</button>
       @endif
     </div>
-  </div>
     <!--------------------------------------------------------------login form------------------------------------------------------------------------------>
 <div id="id01" class="modal">
 	  
   <form class="modal-content animate" action="{{route('dangnhapUserTest')}}" method="post">
     {{csrf_field()}}
-    @if(session()->has('login_fail1'))
-                    <div class="alert alert-danger mb-0 text-uppercase">{{session()->get('login_fail1')}}</div>
-                @else
-
-                @endif
-
-                @if($errors->any())
-                    <div class="alert alert-danger">
-                        @foreach($errors->all() as $err)
-                            <li>{{$err}}</li>
-                        @endforeach
-                    </div>
-                @endif
-      <div class="imgcontainer">
-        <img src="images/user-employee-avatar-man-person-businessman-5-16178.webp" alt="Avatar" class="avatar">
-      </div>
     <div class="container">
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter email" name="email" id="email" required>
+      <label for="username"><b>Email</b></label>
+      <input type="text" placeholder="Enter Username" name="email" id="email" required>
 
       <label for="password"><b>Mật khẩu</b></label>
       <input type="password" placeholder="Enter Password" name="password" id="password" required>
         
-      <button class="loginbutton btn btn-success" type="submit">Đăng nhập</button>
-      <a href="{{route('dangkyUser')}}" class="loginbutton btn btn-info" style="text-align: center;">Đăng ký</a>
-      <hr>
-    <button class="loginbutton btn btn-danger" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <button class="loginbutton" type="submit">Đăng nhập</button>
+      <a href="{{route('dangkyUser')}}" class="loginbutton" style="text-align: center;">Đăng ký</a>
     </div>
-    
+
   </form>
 </div>
 
@@ -280,6 +267,6 @@ span.psw a{
     }
     </script>
 <!---------------------------------------------------------------------------------------------------------------------------------------------->
-
+</div>
 
 </nav>

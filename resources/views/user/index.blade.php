@@ -17,10 +17,11 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/sanpham.css">
     <link rel="stylesheet" href="css/chitiet.css">
+    <link rel="stylesheet" href="{{asset('css/order.css')}}">
 <base href="{{asset('')}}">
     <title>Document</title>
 </head>
-<body style="background-color: rgba(107, 107, 107, 0.151)">
+<body style="background-color: rgb(255, 255, 255)">
     <header>
         @include('user.user-navbar')
     </header>

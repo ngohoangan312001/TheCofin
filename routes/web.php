@@ -104,6 +104,11 @@ Route::group(['prefix'=>'user'], function() {
         'uses'=>'LoginController@loginUser'
     ]);
 
+    Route::get('thoat', [
+        'as' => 'thoatUser',
+        'uses' => 'LoginController@logout'
+    ]);
+
     Route::get('dang-ky',[
         'as'=>'dangkyUser',
         'uses'=>'RegisterController@getRegisterUser'
